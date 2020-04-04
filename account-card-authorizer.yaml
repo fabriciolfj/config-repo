@@ -1,1 +1,28 @@
-
+server:
+  port: 9090
+spring:
+  resources:
+    add-mappings: false
+  mvc:
+    throw-exception-if-no-handler-found: true 
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+      fail-on-ignored-properties: true
+  flyway:
+    locations:
+      - classpath:db/migration
+      - classpath:db/testdata
+  datasource:
+    hikari:
+      maximum-pool-size: 5 #maximo de conexoes
+      minimum-idle: 3 # minimo de conexoes, ou seja, começa com 3
+      idle-timeout: 10000 #tempo limite de ociosidade das conexoes excedentes, ou seja, 5 - 3 = 2, se essas 2 nao serem usadas em 10 seg, seram fechadas
+    url: jdbc:mysql://localhost:3306/account?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+    show-sql: true
