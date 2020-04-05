@@ -24,7 +24,7 @@ spring:
       bindings:
         notify-stage:
           contentType: application/json
-          destination: register-customer
+          destination: notify-stage
           binder: local_rabbit
           group: register.mail
       binders:
