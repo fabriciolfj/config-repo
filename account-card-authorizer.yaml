@@ -33,10 +33,6 @@ spring:
           contentType: application/json
           destination: register-customer
           binder: local_rabbit
-        register.customer:
-          contentType: application/json
-          destination: ${spring.cloud.stream.bindings.register.customer.destination}
-          binder: local_rabbit
       binders:
         local_rabbit:
           type: rabbit
