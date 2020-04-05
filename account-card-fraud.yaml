@@ -1,0 +1,47 @@
+server:
+  port: 9092
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 3
+      idle-timeout: 10000
+    url: jdbc:mysql://localhost:3306/account?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+    show-sql: true
+  cloud:
+    stream:
+      bindings:
+        register.customer:
+          contentType: application/json
+          destination: register-customer
+          binder: local_rabbit
+          group: register.documents
+        decline-customer:
+          contentType: application/json
+          destination: decline-customer
+          binder: local_rabbit 
+        analyze-fraud:
+          contentType: application/json
+          destination: analyze-fraud
+          binder: local_rabbit
+        notify-stage:
+          contentType: application/json
+          destination: notify-stage
+          binder: local_rabbit 
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
