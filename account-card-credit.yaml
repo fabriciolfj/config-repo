@@ -22,10 +22,6 @@ spring:
           destination: credit-customer
           binder: local_rabbit
           group: credit.customer
-        decline-customer:
-          contentType: application/json
-          destination: decline-customer
-          binder: local_rabbit 
         notify-stage:
           contentType: application/json
           destination: notify-stage
