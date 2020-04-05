@@ -26,3 +26,25 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL57Dialect
     show-sql: true
+  cloud:
+    stream:
+      bindings:
+        register.customer:
+          contentType: application/json
+          destination: register-customer
+          binder: local_rabbit
+        register.customer:
+          contentType: application/json
+          destination: ${spring.cloud.stream.bindings.register.customer.destination}
+          binder: local_rabbit
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
