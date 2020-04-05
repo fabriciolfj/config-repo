@@ -13,6 +13,10 @@ spring:
           contentType: application/json
           destination: decline-customer
           binder: local_rabbit 
+        analyze-fraud:
+          contentType: application/json
+          destination: analyze-fraud
+          binder: local_rabbit 
       binders:
         local_rabbit:
           type: rabbit
