@@ -1,6 +1,11 @@
 server:
   port: 9091
 spring:
+  mail:
+    host: smtp.sendgrid.net
+    port: 587
+    username: apikey
+    password: fake
   datasource:
     hikari:
       maximum-pool-size: 5
