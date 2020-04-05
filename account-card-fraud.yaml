@@ -21,10 +21,6 @@ spring:
           contentType: application/json
           destination: credit-customer
           binder: local_rabbit
-        decline-customer:
-          contentType: application/json
-          destination: decline-customer
-          binder: local_rabbit 
         analyze-fraud:
           contentType: application/json
           destination: analyze-fraud
