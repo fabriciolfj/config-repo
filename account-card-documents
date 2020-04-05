@@ -9,6 +9,10 @@ spring:
           destination: register-customer
           binder: local_rabbit
           group: register.documents
+        decline-customer:
+          contentType: application/json
+          destination: register-customer
+          binder: local_rabbit 
       binders:
         local_rabbit:
           type: rabbit
