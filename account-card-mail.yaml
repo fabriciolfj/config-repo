@@ -22,7 +22,7 @@ spring:
   cloud:
     stream:
       bindings:
-        register.customer:
+        notify-stage:
           contentType: application/json
           destination: register-customer
           binder: local_rabbit
