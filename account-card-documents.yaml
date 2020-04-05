@@ -22,10 +22,6 @@ spring:
           destination: register-customer
           binder: local_rabbit
           group: register.documents
-        decline-customer:
-          contentType: application/json
-          destination: decline-customer
-          binder: local_rabbit 
         analyze-fraud:
           contentType: application/json
           destination: analyze-fraud
