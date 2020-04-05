@@ -17,7 +17,7 @@ spring:
           contentType: application/json
           destination: analyze-fraud
           binder: local_rabbit
-        analyze-fraud:
+        notify-stage:
           contentType: application/json
           destination: notify-stage
           binder: local_rabbit 
