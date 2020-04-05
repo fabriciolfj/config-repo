@@ -27,11 +27,6 @@ spring:
           destination: register-customer
           binder: local_rabbit
           group: register.mail
-        decline-customer:
-          contentType: application/json
-          destination: decline-customer
-          binder: local_rabbit
-          group: decline.mail  
       binders:
         local_rabbit:
           type: rabbit
