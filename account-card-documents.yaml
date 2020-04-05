@@ -11,7 +11,7 @@ spring:
           group: register.documents
         decline-customer:
           contentType: application/json
-          destination: register-customer
+          destination: decline-customer
           binder: local_rabbit 
       binders:
         local_rabbit:
