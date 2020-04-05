@@ -11,7 +11,7 @@ spring:
           group: register.mail
         decline-customer:
           contentType: application/json
-          destination: register-customer
+          destination: decline-customer
           binder: local_rabbit
           group: decline.mail  
       binders:
