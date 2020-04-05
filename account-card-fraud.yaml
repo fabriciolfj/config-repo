@@ -17,11 +17,10 @@ spring:
   cloud:
     stream:
       bindings:
-        register.customer:
+        credit-customer:
           contentType: application/json
-          destination: register-customer
+          destination: credit-customer
           binder: local_rabbit
-          group: register.documents
         decline-customer:
           contentType: application/json
           destination: decline-customer
@@ -30,6 +29,7 @@ spring:
           contentType: application/json
           destination: analyze-fraud
           binder: local_rabbit
+          group: register.fraud
         notify-stage:
           contentType: application/json
           destination: notify-stage
