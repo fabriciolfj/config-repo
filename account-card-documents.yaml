@@ -43,11 +43,9 @@ spring:
                 virtual-host: /
 ---
 spring:
-  data:
-    mongodb:
-      host: mongodb
   profiles:
     - docker
+    
 spring.datasource:
   url: jdbc:mysql://mysql/account?createDatabaseIfNotExist=true&serverTimezone=UTC
   
